@@ -1,2 +1,43 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dom</title>
+  </head>
+  <body>
+    <h1 id="res">Percentage calculator</h1>
+    <form onclick="checkResult();return false">
+      <label for="tm">Total marks</label>
+      <input
+        type="text"
+        name="tm"
+        id="tm1"
+        placeholder="Enter your tm"
+        required
+      />
+      <label for="obt">Obt marks</label>
+      <input
+        type="text"
+        name="obt"
+        id="obt1"
+        placeholder="Enter your obt marks"
+        required
+      />
+      <button type="submit">Result</button>
+    </form>
+    <script>
+      function checkResult() {
+        let name = prompt("Enter your name");
+        let stdTm = document.getElementById("tm1").value;
+        let stdObt = document.getElementById("obt1").value;
+        let res = (stdObt / stdTm) * 100;
+        alert("Dear" + name + "" + res + "%");
+        document.getElementById(
+          "res"
+        ).innerHTML = `Dear ${name} you have got it ${res} %`;
+        console.log(`Dear ${name} you have got it ${res} %`);
+      }
+    </script>
+  </body>
+</html>
